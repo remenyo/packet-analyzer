@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+
+</head>
+
+<style>
+  #borderit {
+    border: 2px;
+    padding: 8px;
+    margin: 8px;
+  }
+</style>
+
+<body>
+  <script src="defines.js"></script>
+  <script src="main.js"></script>
+  <h1>Tiny packet wathcer</h1>
+  <div class="borderit">
+    <h2>Open port</h2>
+    <label>Port 0 (like 5683)</label>
+    <input class="saveme" type="text" id="port0">
+    <button id="open_0" onclick="openUDP(0, document.getElementById('port0').value)">OPEN</button>
+
+    <br>
+    <label>Port 1 (like 5683)</label>
+    <input class="saveme" type="text" id="port1">
+    <button id="open_1" onclick="openUDP(1, document.getElementById('port1').value)">OPEN</button>
+
+  </div>
+  <div class="borderit">
+    <label name="relay">Relay between ports?</label>
+    <input class="saveme" type="checkbox" id="relay" name="relay">
+    <br>
+    <label>Address (like 192.168.173.144)</label>
+    <input class="saveme" type="text" id="nat_address">
+    <br>
+    <br>
+    <label>Port (like 5600)</label>
+    <input class="saveme" type="text" id="nat_port">
+    <br>
+
+  </div>
+  <div id="packets"></div>
+  <div id="status"></div>
+</body>
+
+</html>
